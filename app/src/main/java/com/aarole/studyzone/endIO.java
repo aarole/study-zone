@@ -1,4 +1,4 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Context;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class endIO {
     public static final String fileName = "endTime.txt";
 
-    public static void writeData(ArrayList<Long> reminders, Context context){
+    public static void writeData(ArrayList<String> reminders, Context context){
         try {
             FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -26,12 +26,12 @@ public class endIO {
         }
 
     }
-    public static ArrayList<Long> readData(Context context){
-        ArrayList<Long> reminders = null;
+    public static ArrayList<String> readData(Context context){
+        ArrayList<String> reminders = null;
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            reminders = (ArrayList<Long>) ois.readObject();
+            reminders = (ArrayList<String>) ois.readObject();
         } catch (FileNotFoundException e) {
             reminders = new ArrayList<>();
             e.printStackTrace();

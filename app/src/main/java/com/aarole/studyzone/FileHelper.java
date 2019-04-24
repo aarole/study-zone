@@ -1,4 +1,4 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Context;
 
@@ -10,14 +10,22 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class remIO {
-    public static final String fileName = "reminders.txt";
+public class FileHelper extends File {
+    //the file name for the data file that contain the todo list
+    public static final String FILENAME = "listinfo.dat";
 
-    public static void writeData(ArrayList<String> reminders, Context context){
+    /**
+     * writeData
+     * write data
+     * @param items
+     * @param context
+     */
+
+    public void writeData(ArrayList<String> items, Context context){
         try {
-            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(reminders);
+            oos.writeObject(items);
             oos.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -26,20 +34,20 @@ public class remIO {
         }
 
     }
-    public static ArrayList<String> readData(Context context){
-        ArrayList<String> reminders = null;
+    public  ArrayList<String> readData(Context context){
+        ArrayList<String> itemsList = null;
         try {
-            FileInputStream fis = context.openFileInput(fileName);
+            FileInputStream fis = context.openFileInput(FILENAME);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            reminders = (ArrayList<String>) ois.readObject();
+            itemsList = (ArrayList<String>) ois.readObject();
         } catch (FileNotFoundException e) {
-            reminders = new ArrayList<>();
+            itemsList = new ArrayList<>();
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return reminders;
+        return itemsList;
     }
 }

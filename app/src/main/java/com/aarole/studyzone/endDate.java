@@ -1,12 +1,10 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
-
-import java.text.SimpleDateFormat;
 
 public class endDate extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +42,20 @@ public class pickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2 = new Intent(pickActivity.this, HomeActivity.class);
                 startActivity(intent2);
+            }
+        });
+        findViewById(R.id.listBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(pickActivity.this, todo.class);
+                startActivity(intent3);
+            }
+        });
+        findViewById(R.id.statsBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(pickActivity.this, addCourse.class);
+                startActivity(intent4);
             }
         });
     }

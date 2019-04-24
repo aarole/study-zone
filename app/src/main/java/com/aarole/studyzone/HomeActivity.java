@@ -1,13 +1,9 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
     @Override
@@ -29,6 +25,19 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+        findViewById(R.id.listBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(HomeActivity.this, todo.class);
+                startActivity(intent3);
+            }
+        });
+        findViewById(R.id.statsBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(HomeActivity.this, addCourse.class);
+                startActivity(intent4);
+            }
+        });
     }
-
 }

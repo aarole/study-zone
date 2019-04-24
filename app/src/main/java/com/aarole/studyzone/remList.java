@@ -1,10 +1,6 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
-import android.content.ContentUris;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,13 +10,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class remList extends AppCompatActivity {
 
     private ArrayList<String> reminders;
-    private static ArrayList<Long> beginTime;
-    private static ArrayList<Long> endTime;
+//    private static ArrayList<String> beginTime;
+//    private static ArrayList<String> endTime;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -30,8 +25,8 @@ public class remList extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.list);
         reminders = remIO.readData(getApplicationContext());
-        beginTime = begIO.readData(getApplicationContext());
-        endTime = endIO.readData(getApplicationContext());
+//        beginTime = begIO.readData(getApplicationContext());
+//        endTime = endIO.readData(getApplicationContext());
 
 
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,reminders);
@@ -47,13 +42,15 @@ public class remList extends AppCompatActivity {
 //                startActivity(intent);
 
                 String title = reminders.get(position);
-                Long begin = beginTime.get(position);
-                Long end = endTime.get(position);
+//                String begin = beginTime.get(position);
+//                String end = endTime.get(position);
                 reminders.remove(position);
+//                beginTime.remove(position);
+//                endTime.remove(position);
                 adapter.notifyDataSetChanged();
                 remIO.writeData(reminders, remList.this);
-                begIO.writeData(beginTime, remList.this);
-                endIO.writeData(endTime, remList.this);
+//                begIO.writeData(beginTime, remList.this);
+//                endIO.writeData(endTime, remList.this);
 
                 Toast.makeText(remList.this, "Make sure to delete the reminder from your Google Calendar", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_VIEW);

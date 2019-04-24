@@ -1,4 +1,4 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import org.junit.Test;
 

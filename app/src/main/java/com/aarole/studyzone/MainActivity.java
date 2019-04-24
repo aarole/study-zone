@@ -1,14 +1,11 @@
-package com.aarole.calendartest;
+package com.aarole.studyzone;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,21 +16,24 @@ public class MainActivity extends AppCompatActivity {
 //        return reminders;
 //    }
 
-    public static ArrayList<String> getReminders() {
-        return reminders;
-    }
+//    public static ArrayList<String> getReminders() {
+//        return reminders;
+//    }
 
-    public static ArrayList<Long> getBeginTime() {
-        return beginTime;
-    }
+//    public static ArrayList<Long> getBeginTime() {
+//        return beginTime;
+//    }
 
-    public static ArrayList<Long> getEndTime() {
-        return endTime;
-    }
+//    public static ArrayList<Long> getEndTime() {
+//        return endTime;
+//    }
 
     private static ArrayList<String> reminders = new ArrayList<>();
-    private static ArrayList<Long> beginTime = new ArrayList<>();
-    private static ArrayList<Long> endTime = new ArrayList<>();
+    private static ArrayList<String> beginTime = new ArrayList<>();
+    private static ArrayList<String> endTime = new ArrayList<>();
+
+    private String start = "unknown";
+    private String end = "unknown";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String title = edit.getText().toString();
+                start = Integer.toString(hour) + ":" + Integer.toString(minute);
+                end = Integer.toString(year) + "-" + Integer.toString(month) + Integer.toString(date);
+                Reminder rem = new Reminder(ID.getID(), title, start, end);
                 reminders.add(title);
                 remIO.writeData(reminders, getApplicationContext());
 
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 calendar1.set(Calendar.HOUR_OF_DAY, hour);
                 calendar1.set(Calendar.MINUTE, minute);
                 calendar1.set(Calendar.SECOND, 0);
-                beginTime.add(calendar1.getTimeInMillis());
+                beginTime.add(rem.getStart());
                 begIO.writeData(beginTime, getApplicationContext());
 
                 Calendar calendar2 = Calendar.getInstance();
@@ -83,8 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 calendar2.set(Calendar.HOUR_OF_DAY, hour);
                 calendar2.set(Calendar.MINUTE, minute);
                 calendar2.set(Calendar.SECOND, 0);
-                endTime.add(calendar2.getTimeInMillis());
+                endTime.add(rem.getEnd());
                 endIO.writeData(endTime, getApplicationContext());
+
 
 
                 Intent intent = new Intent(Intent.ACTION_EDIT);
