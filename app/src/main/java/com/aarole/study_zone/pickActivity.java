@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -54,8 +54,15 @@ public class pickActivity extends AppCompatActivity {
         findViewById(R.id.statsBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4 = new Intent(pickActivity.this, addCourse.class);
-                startActivity(intent4);
+                int choice = courseIO.readData(pickActivity.this).size();
+
+                if(choice == 0){
+                    startActivity(new Intent(pickActivity.this, addCourse.class));
+                }
+                else{
+                    addCourse.setT(0);
+                    startActivity(new Intent(pickActivity.this, stats.class));
+                }
             }
         });
     }

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aarole.studyzone">
+    package="com.aarole.study_zone">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/sz_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/sz_logo"
+        android:roundIcon="@mipmap/sz_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.aarole.studyzone.HomeActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.aarole.studyzone.pickActivity" />
-        <activity android:name="com.aarole.studyzone.remList" />
-        <activity android:name="com.aarole.studyzone.endDate" />
-        <activity android:name="com.aarole.studyzone.startTime" />
-        <activity android:name="com.aarole.studyzone.MainActivity" />
-        <activity android:name="com.aarole.studyzone.playlistPicker"/>
-        <activity android:name="com.aarole.studyzone.todo"/>
-        <activity android:name="com.aarole.studyzone.stats"/>
-        <activity android:name="com.aarole.studyzone.addCourse"/>
+        <activity android:name="com.aarole.study_zone.pickActivity" />
+        <activity android:name="com.aarole.study_zone.remList" />
+        <activity android:name="com.aarole.study_zone.endDate" />
+        <activity android:name="com.aarole.study_zone.startTime" />
+        <activity android:name="com.aarole.study_zone.MainActivity" />
+        <activity android:name="com.aarole.study_zone.playlistPicker"/>
+        <activity android:name="com.aarole.study_zone.todo"/>
+        <activity android:name="com.aarole.study_zone.stats"/>
+        <activity android:name="com.aarole.study_zone.addCourse"/>
     </application>
 
 </manifest>

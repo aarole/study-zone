@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".playlistPicker">
 
-    <Button
-        android:id="@+id/homeBtn"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:text="Home"
-        android:layout_alignParentRight="true"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/listBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="To-do List"/>
+
+        <Button
+            android:id="@+id/statsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="stats"/>
+
+        <Button
+            android:id="@+id/reminderBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="reminders" />
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="home" />
+    </LinearLayout>
     <Button
         android:id="@+id/myplaylistsBtn"
         android:layout_width="match_parent"
@@ -26,27 +52,6 @@
         android:layout_marginTop="350dp"
         android:text="Random Playlist"/>
 
-    <Button
-        android:id="@+id/reminderBtn"
-        android:layout_width="136dp"
-        android:layout_height="50dp"
-        android:text="reminders"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="272dp"/>
-    <Button
-        android:id="@+id/listBtn"
-        android:layout_width="136dp"
-        android:layout_height="50dp"
-        android:text="to-do list"
-        android:layout_alignParentBottom="true"/>
-
-    <Button
-        android:id="@+id/statsBtn"
-        android:layout_width="136dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:text="stats"
-        android:layout_marginLeft="136dp"/>
 
 
 

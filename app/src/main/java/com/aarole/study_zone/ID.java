@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

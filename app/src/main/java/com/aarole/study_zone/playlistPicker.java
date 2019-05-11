@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -66,8 +66,15 @@ public class playlistPicker extends AppCompatActivity implements randomPicker<Ur
         findViewById(R.id.statsBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4 = new Intent(playlistPicker.this, addCourse.class);
-                startActivity(intent4);
+                int choice = courseIO.readData(playlistPicker.this).size();
+
+                if(choice == 0){
+                    startActivity(new Intent(playlistPicker.this, addCourse.class));
+                }
+                else{
+                    addCourse.setT(0);
+                    startActivity(new Intent(playlistPicker.this, stats.class));
+                }
             }
         });
     }

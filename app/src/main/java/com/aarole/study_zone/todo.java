@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -89,8 +89,15 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
             }case R.id.stats:{
-                Intent intent = new Intent(todo.this, addCourse.class);
-                startActivity(intent);
+                int choice = courseIO.readData(todo.this).size();
+
+                if(choice == 0){
+                    startActivity(new Intent(todo.this, addCourse.class));
+                }
+                else{
+                    addCourse.setT(0);
+                    startActivity(new Intent(todo.this, stats.class));
+                }
 //                Toast.makeText(this, "STATS", Toast.LENGTH_SHORT).show();
                 break;
                 //do intent stuff

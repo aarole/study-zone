@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

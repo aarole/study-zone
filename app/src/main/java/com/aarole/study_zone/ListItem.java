@@ -1,15 +1,15 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
-public class Event extends Item {
+public class ListItem extends Item {
     private int id;
     private String title;
 
-    public Event(){
+    public ListItem(){
         super();
         this.title = "UNKNOWN";
     }
 
-    public Event(int id, String title){
+    public ListItem(int id, String title){
         super(id);
         this.title = title;
     }

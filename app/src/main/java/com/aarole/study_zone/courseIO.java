@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Context;
 
@@ -10,8 +10,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class begIO {
-    public static final String fileName = "beginTime.txt";
+public class courseIO {
+    public static final String fileName = "courses.txt";
 
     public static void writeData(ArrayList<String> reminders, Context context){
         try {

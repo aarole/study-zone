@@ -7,37 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <Button
-        android:id="@+id/listBtn"
-        android:layout_width="102dp"
-        android:layout_height="50dp"
-        android:text="To-do List"
-        android:layout_alignParentBottom="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/listBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="To-do List"/>
 
-    <Button
-        android:id="@+id/statsBtn"
-        android:layout_width="102dp"
-        android:layout_height="50dp"
-        android:text="stats"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="102dp"/>
+        <Button
+            android:id="@+id/statsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="stats"/>
 
-    <Button
-        android:id="@+id/musicBtn"
-        android:layout_width="102dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="306dp"
-        android:text="music" />
+        <Button
+            android:id="@+id/reminderBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="reminders" />
 
-    <Button
-        android:id="@+id/reminderBtn"
-        android:layout_width="102dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="204dp"
-        android:layout_marginBottom="0dp"
-        android:text="reminders" />
+        <Button
+            android:id="@+id/musicBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="music" />
+
+    </LinearLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"

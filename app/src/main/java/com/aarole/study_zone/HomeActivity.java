@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,8 +35,15 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.statsBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4 = new Intent(HomeActivity.this, addCourse.class);
-                startActivity(intent4);
+                int choice = courseIO.readData(HomeActivity.this).size();
+
+                if(choice == 0){
+                    startActivity(new Intent(HomeActivity.this, addCourse.class));
+                }
+                else{
+                    addCourse.setT(0);
+                    startActivity(new Intent(HomeActivity.this, stats.class));
+                }
             }
         });
     }

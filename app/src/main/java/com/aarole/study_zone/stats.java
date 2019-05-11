@@ -1,4 +1,4 @@
-package com.aarole.studyzone;
+package com.aarole.study_zone;
 import android.content.Intent;
 
 import java.util.ArrayList;
@@ -23,23 +23,45 @@ public class stats extends AppCompatActivity {
     PieData pieData ;
     ArrayList<String> courses = new ArrayList<>();
     ArrayList<String> hours = new ArrayList<>();
-    String course="";
-    String hour="0";
-    int i = 0;
+//    int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stats);
 
-        Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        String course1=(String) b.get("courseArray");
-        String hour1 =(String) b.get("hourArray");
-        i=(int) b.get("test");
-        courses.add(course1);
-        hours.add(hour1);
 
+
+//        i=test.readData(this);
+        courses = courseIO.readData(this);
+        hours = hoursIO.readData(this);
+//        if(i!=0){
+//            courses = courseIO.readData(this);
+//            hours = hoursIO.readData(this);
+//        }
+
+        if(addCourse.getT() == 1){
+            Intent intent = getIntent();
+            Bundle b = intent.getExtras();
+            String course1=(String) b.get("courseArray");
+            String hour1 =(String) b.get("hourArray");
+
+            if(courses.contains(course1)){
+                int i = courses.indexOf(course1);
+                int h = Integer.parseInt(hours.get(i)) + Integer.parseInt(hour1);
+                hours.remove(i);
+                hours.add(i, Integer.toString(h));
+            }
+            else {
+                courses.add(course1);
+                hours.add(hour1);
+            }
+        }
+
+
+
+        courseIO.writeData(courses, this);
+        hoursIO.writeData(hours, this);
 
         pieChart = (PieChart) findViewById(R.id.chart1);
 
@@ -89,10 +111,10 @@ public class stats extends AppCompatActivity {
 
     public void AddValuesToPieEntryLabels(){
 
-        for(String e:courses){
-            PieEntryLabels.add(e);
-        }
-
+//        for(String e:courses){
+//            PieEntryLabels.add(e);
+//        }
+        PieEntryLabels.addAll(courses);
 
     }
 }
