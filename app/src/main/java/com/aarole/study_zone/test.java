@@ -8,11 +8,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 public class test {
-    public static final String fileName = "test.txt";
+    public static final String fileName = "test1.txt";
 
-    public static void writeData(int i, Context context){
+    public static void writeData(ArrayList<String> i, Context context){
         try {
             FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -25,14 +26,14 @@ public class test {
         }
 
     }
-    public static int readData(Context context){
-        int i = 0;
+    public static ArrayList<String> readData(Context context){
+        ArrayList<String> i = null;
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            i = (int) ois.readObject();
+            i = (ArrayList<String>) ois.readObject();
         } catch (FileNotFoundException e) {
-            i=0;
+            i=new ArrayList<>();
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

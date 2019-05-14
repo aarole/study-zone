@@ -55,7 +55,7 @@ public class addCourse extends AppCompatActivity {
                 intent.putExtra("courseArray", course1);
                 intent.putExtra("hourArray", hour1);
                 intent.putExtra("test", i);
-                test.writeData(i, addCourse.this);
+//                test.writeData(i, addCourse.this);
                 startActivity(intent);
                 finish();
             }

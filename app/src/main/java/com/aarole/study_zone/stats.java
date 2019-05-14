@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -14,7 +17,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-public class stats extends AppCompatActivity {
+public class stats extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     PieChart pieChart ;
     ArrayList<Entry> entries ;
@@ -23,6 +26,8 @@ public class stats extends AppCompatActivity {
     PieData pieData ;
     ArrayList<String> courses = new ArrayList<>();
     ArrayList<String> hours = new ArrayList<>();
+    ArrayList<String> list1 = new ArrayList<>();
+    private ArrayAdapter<String> adapter;
 //    int i=0;
 
     @Override
@@ -30,7 +35,7 @@ public class stats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stats);
 
-
+        final ListView listView = findViewById(R.id.listV);
 
 //        i=test.readData(this);
         courses = courseIO.readData(this);
@@ -58,6 +63,15 @@ public class stats extends AppCompatActivity {
             }
         }
 
+
+        for(int i=0; i<courses.size();i++){
+            list1.add(i, ("name: " + courses.get(i) + "\t\t\t\t" + "hours: " + hours.get(i)));
+        }
+
+
+        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, list1);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
 
 
         courseIO.writeData(courses, this);
@@ -98,6 +112,18 @@ public class stats extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        courses.remove(position);
+        hours.remove(position);
+        list1.remove(position);
+        adapter.notifyDataSetChanged();
+        courseIO.writeData(courses, stats.this);
+        hoursIO.writeData(hours, stats.this);
+        finish();
+        startActivity(getIntent());
     }
 
     public void AddValuesToPIEENTRY(){

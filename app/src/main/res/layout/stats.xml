@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     >
 
+
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chart1"
         android:layout_width="fill_parent"
-        android:layout_height="600dp"
+        android:layout_height="500dp"
         android:layout_marginTop="70dp"/>
     <Button
         android:layout_width="match_parent"
@@ -23,5 +25,12 @@
         android:layout_height="50dp"
         android:text="Home"
         android:layout_alignParentRight="true"/>
+
+    <ListView
+        android:id="@+id/listV"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="575dp"
+        android:scrollbars="vertical"/>
 
 </RelativeLayout>
