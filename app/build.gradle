@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.aarole.study_zone"
-        minSdkVersion 19
+        minSdkVersion 26
         targetSdkVersion 28
         versionName '1.1.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

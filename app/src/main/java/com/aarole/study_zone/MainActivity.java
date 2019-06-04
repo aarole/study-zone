@@ -89,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 endTime.add(rem.getEnd());
                 endIO.writeData(endTime, getApplicationContext());
 
-
-
                 Intent intent = new Intent(Intent.ACTION_EDIT);
                 intent.setType("vnd.android.cursor.item/event");
                 intent.putExtra("beginTime", calendar1.getTimeInMillis());
