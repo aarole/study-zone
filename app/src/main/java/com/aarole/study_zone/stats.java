@@ -37,7 +37,6 @@ public class stats extends AppCompatActivity implements AdapterView.OnItemClickL
 
         final ListView listView = findViewById(R.id.listV);
 
-//        i=test.readData(this);
         courses = courseIO.readData(this);
         hours = hoursIO.readData(this);
 //        if(i!=0){
@@ -119,9 +118,9 @@ public class stats extends AppCompatActivity implements AdapterView.OnItemClickL
         courses.remove(position);
         hours.remove(position);
         list1.remove(position);
-        adapter.notifyDataSetChanged();
         courseIO.writeData(courses, stats.this);
         hoursIO.writeData(hours, stats.this);
+        adapter.notifyDataSetChanged();
         finish();
         startActivity(getIntent());
     }

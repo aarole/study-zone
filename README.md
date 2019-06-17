@@ -1,5 +1,16 @@
 # Study Zone
 
+# Updates:
+	Bug Fixes:
+		Fixed height of course list in Stats.
+
+	Known Issues:
+		Cannot delete course right after adding it. Users need to exit and re-enter Stats page to delete a course that has just been added.
+
+	Misc:
+		Added Splash Screen.
+		Study Zone now requires Android 8.0 (working on lowering that requirement).
+
 Study Zone offers a centralized way to access 4 features - 
 
 1. Todo List

@@ -44,55 +44,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:text="My playlists"/>
+        android:text="My Playlists"/>
     <Button
         android:id="@+id/randomBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
-        android:text="Random Playlist"/>
-    <TextView
-        android:id="@+id/lblT"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Title:"
-        android:textSize="45dp"/>
-    <TextView
-        android:id="@+id/lblAl"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Album:"
-        android:textSize="45dp"
-        android:layout_marginTop="50dp"/>
-    <TextView
-        android:id="@+id/lblAr"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Artist:"
-        android:textSize="45dp"
-        android:layout_marginTop="100dp"/>
-    <TextView
-        android:id="@+id/song_title"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textSize="45dp"
-        android:layout_toRightOf="@+id/lblT"/>
-    <TextView
-        android:id="@+id/song_album"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textSize="45dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/lblAl"/>
-    <TextView
-        android:id="@+id/song_artist"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        android:textSize="45dp"
-        android:layout_toRightOf="@+id/lblAr"/>
-
-
-
-
+        android:text="Random Playlist" />
 </RelativeLayout>

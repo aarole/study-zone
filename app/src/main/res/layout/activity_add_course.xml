@@ -7,28 +7,32 @@
     tools:context=".addCourse">
 
     <TextView
+        android:id="@+id/lblCourse"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Course:"
         android:textSize="35dp"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="30dp"/>
     <TextView
+        android:id="@+id/lblHours"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Hours:"
         android:textSize="35dp"
-        android:layout_marginTop="335dp"/>
+        android:layout_marginTop="335dp"
+        android:layout_marginLeft="30dp"/>
     <EditText
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="155dp"
+        android:layout_marginLeft="185dp"
         android:id="@+id/txtCourse"/>
     <EditText
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="335dp"
-        android:layout_marginLeft="155dp"
+        android:layout_marginLeft="185dp"
         android:id="@+id/txtHours"/>
     <Button
         android:layout_width="150dp"

@@ -6,9 +6,9 @@ android {
         applicationId "com.aarole.study_zone"
         minSdkVersion 26
         targetSdkVersion 28
-        versionName '1.1.1'
+        versionName '1.2'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        versionCode 4
+        versionCode 5
     }
     buildTypes {
         release {
@@ -30,8 +30,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile 'com.github.PhilJay:MPAndroidChart:v2.2.4'
-    compile 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    compile 'com.google.android.gms:play-services-auth:9.0.2'
+    compile 'pub.devrel:easypermissions:0.1.5'
+    compile('com.google.api-client:google-api-client-android:1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-calendar:v3-rev218-1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
 }
 repositories {
     maven { url 'http://repo1.maven.org/maven2' }

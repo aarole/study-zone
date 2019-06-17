@@ -43,6 +43,10 @@ public class addCourse extends AppCompatActivity {
                     hour.setError("Hours studied cannot be empty!");
                     return;
                 }
+                if(!tryParseInt(hour.getText().toString())){
+                    hour.setError("Hours studied has to be an integer!");
+                    return;
+                }
                 String course1 = course.getText().toString();
                 String hour1 = hour.getText().toString();
                 int i = 1;
@@ -55,7 +59,6 @@ public class addCourse extends AppCompatActivity {
                 intent.putExtra("courseArray", course1);
                 intent.putExtra("hourArray", hour1);
                 intent.putExtra("test", i);
-//                test.writeData(i, addCourse.this);
                 startActivity(intent);
                 finish();
             }
@@ -68,5 +71,14 @@ public class addCourse extends AppCompatActivity {
 
     public static void setT(int temp){
         t = temp;
+    }
+
+    boolean tryParseInt(String value) {
+        try {
+            Integer.parseInt(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

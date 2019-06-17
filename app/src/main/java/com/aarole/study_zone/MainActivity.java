@@ -7,7 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.api.client.util.DateTime;
+import com.google.api.services.calendar.model.EventDateTime;
+import com.google.api.services.calendar.model.EventReminder;
+import com.google.api.services.calendar.model.Event;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<String> reminders = new ArrayList<>();
     private static ArrayList<String> beginTime = new ArrayList<>();
     private static ArrayList<String> endTime = new ArrayList<>();
+    private com.google.api.services.calendar.Calendar mService = null;
 
     private String start = "unknown";
     private String end = "unknown";
@@ -93,11 +101,13 @@ public class MainActivity extends AppCompatActivity {
                 intent.setType("vnd.android.cursor.item/event");
                 intent.putExtra("beginTime", calendar1.getTimeInMillis());
                 intent.putExtra("allDay", false);
-                //intent.putExtra("rrule", "FREQ=WEEKLY"); Google Calendar is currently causing errors when setting recurrence rule.
+//                intent.putExtra("rrule", "FREQ=WEEKLY"); /*Google Calendar is currently causing errors when setting recurrence rule.*/
                 intent.putExtra("title", title);
                 intent.putExtra("endTime", calendar2.getTimeInMillis());
                 startActivity(intent);
                 finish();
+
+
             }
         });
 

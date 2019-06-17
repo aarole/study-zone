@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:allowBackup="true"
@@ -12,33 +15,26 @@
         android:roundIcon="@mipmap/sz_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.aarole.study_zone.pickActivity" />
-        <activity android:name="com.aarole.study_zone.remList" />
-        <activity android:name="com.aarole.study_zone.endDate" />
-        <activity android:name="com.aarole.study_zone.startTime" />
-        <activity android:name="com.aarole.study_zone.MainActivity" />
-        <activity android:name="com.aarole.study_zone.playlistPicker"/>
-        <activity android:name="com.aarole.study_zone.todo"/>
-        <activity android:name="com.aarole.study_zone.stats"/>
-        <activity android:name="com.aarole.study_zone.addCourse"/>
-        <receiver
-            android:name="MyBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="com.spotify.music.playbackstatechanged"/>
-                <action android:name="com.spotify.music.metadatachanged"/>
-                <action android:name="com.spotify.music.queuechanged"/>
-            </intent-filter>
-        </receiver>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".pickActivity" />
+        <activity android:name=".remList" />
+        <activity android:name=".endDate" />
+        <activity android:name=".startTime" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".playlistPicker" />
+        <activity android:name=".todo" />
+        <activity android:name=".stats" />
+        <activity android:name=".addCourse" />
     </application>
 
 </manifest>

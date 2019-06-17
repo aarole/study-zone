@@ -13,32 +13,10 @@ import android.widget.TextView;
 
 public class playlistPicker extends AppCompatActivity implements randomPicker<Uri>{
 
-    String title, album, artist;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist_picker);
-
-        TextView song_title = findViewById(R.id.song_title);
-        TextView song_album = findViewById(R.id.song_album);
-        TextView song_artist = findViewById(R.id.song_artist);
-
-        BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Intent intent1 = getIntent();
-                Bundle b = intent1.getExtras();
-                title = b.getString("track");
-                artist = b.getString("artist");
-                album = b.getString("album");
-            }
-        };
-        registerReceiver(broadcastReceiver, new IntentFilter("broadcast"));
-
-        song_title.setText(title);
-        song_album.setText(album);
-        song_artist.setText(artist);
 
         Button user = findViewById(R.id.myplaylistsBtn);
         final Button random = findViewById(R.id.randomBtn);
