@@ -55,7 +55,6 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         music = findViewById(R.id.music);
         music.setOnClickListener(this);
         itemsList.setOnItemClickListener(this);
-
     }
 
     /**
@@ -143,4 +142,5 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         //Toast the user and show that the item has been deleted
         Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
     }
+
 }

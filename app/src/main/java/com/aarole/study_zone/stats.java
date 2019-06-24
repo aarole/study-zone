@@ -118,11 +118,12 @@ public class stats extends AppCompatActivity implements AdapterView.OnItemClickL
         courses.remove(position);
         hours.remove(position);
         list1.remove(position);
+        pieDataSet.removeEntry(position);
         courseIO.writeData(courses, stats.this);
         hoursIO.writeData(hours, stats.this);
         adapter.notifyDataSetChanged();
-        finish();
-        startActivity(getIntent());
+        pieChart.notifyDataSetChanged();
+        pieChart.invalidate();
     }
 
     public void AddValuesToPIEENTRY(){
